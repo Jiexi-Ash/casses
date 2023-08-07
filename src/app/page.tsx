@@ -19,6 +19,7 @@ import {
 
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import CreateCase from "@/components/form/CreateCase";
 
 const openCases = [
   {
@@ -98,9 +99,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col px-24 py-12">
       <h2 className="text-3xl font-bold tracking-tight block">Overview</h2>
       <div className="flex justify-end w-full">
-        <Button className="mt-4 text-white bg-[#15305d] max-w-fit">
-          Create New Case
-        </Button>
+        <CreateCase />
       </div>
       <div className="w-full grid grid-cols-4 gap-x-4 mt-10">
         <Card className="bg-green-400 text-white">
