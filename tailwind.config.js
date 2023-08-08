@@ -16,6 +16,9 @@ module.exports = {
       },
     },
     extend: {
+      backgroundImage: {
+        'sign-image': "url('/images/background-blue.jpg')",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: 0 },
