@@ -36,3 +36,4 @@ export const POST = async (req: NextRequest, res: NextResponse) => {
         return new NextResponse("Something went wrong", { status: 500 });
     }
 };
+

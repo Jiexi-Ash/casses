@@ -20,6 +20,10 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import CreateCase from "@/components/form/CreateCase";
+import OpenCases from "@/components/Cards/OpenCases";
+import ClosedCases from "@/components/Cards/ClosedCases";
+import ClosedMonth from "@/components/Cards/closedMonth";
+import AssignedCasses from "@/components/Cards/AssignedCasses";
 
 const openCases = [
   {
@@ -102,46 +106,10 @@ export default function Home() {
         <CreateCase />
       </div>
       <div className="w-full grid grid-cols-4 gap-x-4 mt-10">
-        <Card className="bg-green-400 text-white">
-          <CardHeader className="flex justify-between pb-2">
-            <CardTitle className="text-sm font-medium capitalize">
-              Assigned to me
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">200</div>
-          </CardContent>
-        </Card>
-        <Card className="max-h-[150px]">
-          <CardHeader className="flex justify-between pb-2">
-            <CardTitle className="text-sm font-medium capitalize">
-              Open cases
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">180</div>
-          </CardContent>
-        </Card>
-        <Card className="max-h-[150px]">
-          <CardHeader className="flex justify-between pb-2">
-            <CardTitle className="text-sm font-medium capitalize">
-              Closed by me
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">180</div>
-          </CardContent>
-        </Card>
-        <Card className="max-h-[150px]">
-          <CardHeader className="flex justify-between pb-2">
-            <CardTitle className="text-sm font-medium capitalize">
-              Closed this month
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">2000</div>
-          </CardContent>
-        </Card>
+        <AssignedCasses />
+        <OpenCases />
+        <ClosedCases />
+        <ClosedMonth />
       </div>
       <div className="border mt-10 rounded-lg p-6">
         <div className="">
