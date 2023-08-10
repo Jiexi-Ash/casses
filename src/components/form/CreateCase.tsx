@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import {
   Dialog,
   DialogContent,
@@ -15,16 +15,8 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+import { useMutation } from "@tanstack/react-query";
+import axios from "axios";
 
 import {
   Select,
@@ -54,6 +46,8 @@ const formSchema = z.object({
 type FormValues = z.infer<typeof formSchema>;
 
 function CreateCase() {
+  const [isLoading, setIsLoading] = useState(false);
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -63,12 +57,16 @@ function CreateCase() {
       </DialogTrigger>
       <DialogContent className="max-w-[600px] w-full max-h-[600px] overflow-auto">
         <DialogHeader>
-          <DialogTitle className="text-xl">Create Case</DialogTitle>
-          <DialogDescription>
-            Typical reponse time is 24 hours
-          </DialogDescription>
+          {!isLoading && (
+            <DialogTitle className="text-xl">Create Case</DialogTitle>
+          )}
+          {!isLoading && (
+            <DialogDescription>
+              Typical reponse time is 24 hours
+            </DialogDescription>
+          )}
         </DialogHeader>
-        <CreateCaseForm />
+        <CreateCaseForm isLoading={isLoading} setIsLoading={setIsLoading} />
       </DialogContent>
     </Dialog>
   );
