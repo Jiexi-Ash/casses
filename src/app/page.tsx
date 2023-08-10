@@ -22,8 +22,8 @@ import { Button } from "@/components/ui/button";
 import CreateCase from "@/components/form/CreateCase";
 import OpenCases from "@/components/Cards/OpenCases";
 import ClosedCases from "@/components/Cards/ClosedCases";
-import ClosedMonth from "@/components/Cards/closedMonth";
 import AssignedCasses from "@/components/Cards/AssignedCasses";
+import ClosedMonth from "@/components/Cards/MonthClosed";
 
 const openCases = [
   {
@@ -109,6 +109,7 @@ export default function Home() {
         <AssignedCasses />
         <OpenCases />
         <ClosedCases />
+
         <ClosedMonth />
       </div>
       <div className="border mt-10 rounded-lg p-6">
